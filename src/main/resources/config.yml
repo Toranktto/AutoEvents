@@ -1,0 +1,29 @@
+config:
+  seconds-to-start: 60
+  event-every: "1h"
+  mqtt-uri: ""
+  mqtt-topic: ""
+  mqtt-username: ""
+  mqtt-password: ""
+  disabled-autostart-events:
+    - "war"
+  maze:
+    region-name: "maze"
+    region-world: "autoevents"
+    min-players: 1
+    wall-block: "minecraft:oak_leaves"
+    floor-block: "minecraft:stone"
+    treasure-block: "minecraft:chest"
+    treasure-chance: 0.5
+    treasure-amount: 3
+    treasure-items:
+      super-shield:
+        id: "minecraft:shield"
+        chance: 50
+        name: "&dTarcza z labiryntu"
+        enchants:
+          - "Unbreaking 2"
+      golden-apple:
+        id: "minecraft:golden_apple"
+        chance: 50
+    timeout: "5m"

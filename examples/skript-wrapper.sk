@@ -1,0 +1,17 @@
+command autoevent-wrapper::example [<text>] [<text>] [<text>]:
+	executable by: console
+	trigger:
+		if arg-1 is "start":
+			broadcast "on event start"
+		else if arg-1 is "finish":
+			broadcast "on event finish"
+		else if arg-1 is "join":
+			set {_player} to arg-2 parsed as player
+			broadcast "%{_player}% joined to event"
+		else if arg-1 is "leave":
+			set {_player} to arg-2 parsed as player
+			set {_cause} to arg-3
+			broadcast "%{_player}% left from event because %{_cause}%"
+
+on load:
+	register autoevent "example" with localized name "Przykładowy Event" and timeout 1 minute and command "autoevent-wrapper::example"
